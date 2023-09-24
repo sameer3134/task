@@ -6,7 +6,7 @@ import WordFrequency from './comp/WordFrequency';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App ">
       <Router>
         <Routes>
           <Route path="/" element={<Main />} />

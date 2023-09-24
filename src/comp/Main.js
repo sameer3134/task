@@ -54,35 +54,36 @@ const Main = () => {
 
   return (
     <div>
+      <div class="flex justify-center  p-7 bg-gray-700">
+                                            <div class="flex flex-col justify-center items-center text-center">
+                                                <div class="text-white text-3xl md:text-5xl font-medium  my-2">Text Analyzer</div>
+                                                <div class="text-white md:text-xl  my-2 ">5 Most occured words and 5 Most adjacent co-occured words</div>
+                                               
+                                            </div>
+                                        </div> 
       <section className="text-gray-600 body-font relative">
         <div className="container px-5 py-20 mx-auto">
-          <div className="flex flex-col text-center w-full mb-12">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Text Analyzer Api</h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">5 Most occuring words and 5 Most adjacent co-occuring words</p>
-          </div>
+         
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">
-              <div className="p-2 w-full">
+              <div className=" w-full">
                 <div className="relative">
                   <label htmlFor="message" className="leading-7 text-xl text-gray-600"></label>
-                  <textarea value={input.text} onChange={handleData} name="text" placeholder='Message' className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-60 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                  <textarea value={input.text} onChange={handleData} name="text" placeholder='Message' className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-700 focus:bg-white focus:ring-2 focus:ring-gray-200 h-60 text-base outline-none text-gray-900 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                 </div>
               </div>
-              <h1 className="flex flex-col text-center w-full text-xl">OR</h1>
-              <div className="p-2 w-full">
-                <label htmlFor="file" className="leading-7 text-lg text-gray-600">
-                  Upload .txt File
-                </label>
+              <div className="w-30">
+                
                 <input
                   type="file"
                   accept=".txt"
                   id="file"
-                  onChange={handleFileChange}
-                  className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 py-1 px-3 text-base outline-none text-gray-700 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                  onChange={handleFileChange} 
+                  className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-700 focus:bg-white focus:ring-2 focus:ring-gray-200 py-1 px-3 text-base outline-none text-gray-700 resize-none leading-6 transition-colors duration-200 ease-in-out"
                 />
               </div>
               <div className="p-2 w-full">
-                <button onClick={handleSubmit} className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Analyze</button>
+                <button onClick={handleSubmit} className="flex mx-auto text-white bg-gray-700 border-0 py-2 px-8 focus:outline-none hover:bg-gray-500 rounded text-lg">Analyze</button>
               </div>
             </div>
           </div>
@@ -95,7 +96,7 @@ const Main = () => {
       {results && <Link
         to={"/analysis"}
         state={{ wordFrequency: results?.wordFrequency }}
-        className="flex mx-auto w-64 text-white bg-indigo-500 border-0 py-2 px-8 my-12 focus:outline-none hover:bg-indigo-600 rounded text-lg justify-center"
+        className="flex mx-auto w-64 text-white bg-gray-700 border-0 py-2 px-8 my-12 focus:outline-none hover:bg-gray-600 rounded text-lg justify-center"
       >
         Frequency Analysis
       </Link>}
